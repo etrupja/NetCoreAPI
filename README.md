@@ -11,12 +11,19 @@
 To install .NET Core please follow the steps on the official web site https://www.microsoft.com/net/core#windowsvs2015
 
 ### **2.	Opening project**
-a.	Open the solution in VS 2015 
-b.	Open Package Manager Console on the project by going to: Tools > Nuget Package Manager > Package Manager Console
-c.	On the start up class modify the database connection string (connection) to reflect your database environment
-d.	Run the following commands (they will create the database schema on your database environment):
-i.	Dotnet ef migrations add “initial”
-ii.	Dotnet ef database update
+-Open the solution in VS 2015 
+
+-Open Package Manager Console on the project by going to: Tools > Nuget Package Manager > Package Manager Console
+
+-On the start up class modify the database connection string (connection) to reflect your database environment
+
+-Run the following commands (they will create the database schema on your database environment):
+
+		Dotnet ef migrations add “initial”
+
+		Dotnet ef database update
+
+
 
 ### **3.	Build and Run**
 You could test the API using POSTMAN which can be downloaded from here: https://www.getpostman.com/
