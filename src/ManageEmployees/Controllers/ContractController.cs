@@ -62,6 +62,7 @@ namespace ManageEmployees.Controllers
             }
         }
 
+
         [HttpPut("{id}")]
         public void Put(int id, [FromBody] Contract contract)
         {
