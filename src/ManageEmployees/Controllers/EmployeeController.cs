@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using ManageEmployees.Data.Abstract;
-using ManageEmployees.Data.Repositories;
 using ManageEmployees.Models.Entities;
 using Microsoft.AspNetCore.Mvc;
 
@@ -12,13 +9,11 @@ namespace ManageEmployees.Controllers
     [Route("api/[controller]")]
     public class EmployeeController : Controller
     {
-        private readonly IDepartmentRepository _departmentRepository;
         private readonly IEmployeeRepository _employeeRepository;
         private readonly IContractRepository _contractRepository;
 
-        public EmployeeController(IDepartmentRepository departmentRepository, IEmployeeRepository employeeRepository, IContractRepository contractRepository)
+        public EmployeeController(IEmployeeRepository employeeRepository, IContractRepository contractRepository)
         {
-            this._departmentRepository = departmentRepository;
             this._employeeRepository = employeeRepository;
             this._contractRepository = contractRepository;
         }

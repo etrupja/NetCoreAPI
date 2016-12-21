@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
-using System.Threading.Tasks;
 using ManageEmployees.Data.Abstract;
 using ManageEmployees.Models;
 using Microsoft.EntityFrameworkCore;
@@ -12,7 +10,7 @@ namespace ManageEmployees.Data.Base
 {
     public class EntityBaseRepository<T> : IEntityBaseRepository<T> where T : class, IEntityBase, new()
     {
-        private ManageEmployeesContext _context;
+        private readonly ManageEmployeesContext _context;
 
         public EntityBaseRepository(ManageEmployeesContext context)
         {
@@ -49,10 +47,7 @@ namespace ManageEmployees.Data.Base
         public T GetSingle(Expression<Func<T, bool>> predicate, params Expression<Func<T, object>>[] includeProperties)
         {
             IQueryable<T> query = _context.Set<T>();
-            foreach (var includeProperty in includeProperties)
-            {
-                query = query.Include(includeProperty);
-            }
+            query = includeProperties.Aggregate(query, (current, includeProperty) => current.Include(includeProperty));
 
             return query.Where(predicate).FirstOrDefault();
         }
@@ -64,7 +59,6 @@ namespace ManageEmployees.Data.Base
 
         public virtual void Add(T entity)
         {
-            EntityEntry dbEntityEntry = _context.Entry<T>(entity);
             _context.Set<T>().Add(entity);
         }
 
@@ -82,7 +76,7 @@ namespace ManageEmployees.Data.Base
 
         public virtual void DeleteWhere(Expression<Func<T, bool>> predicate)
         {
-            IQueryable<T> entities = _context.Set<T>().Where(predicate);
+            var entities = _context.Set<T>().Where(predicate);
 
             foreach (var entity in entities)
             {
@@ -93,7 +87,6 @@ namespace ManageEmployees.Data.Base
         public virtual void Commit()
         {
             _context.SaveChanges();
-
         }
     }
 

@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Linq;
 using ManageEmployees.Data.Abstract;
 using ManageEmployees.Models.Entities;
 using Microsoft.AspNetCore.Mvc;
@@ -21,7 +20,7 @@ namespace ManageEmployees.Controllers
         [HttpGet]
         public IActionResult Get()
         {
-            IQueryable<Contract> contracts = _contractRepository.AllIncluding(e=>e.Employee);
+            var contracts = _contractRepository.AllIncluding(e=>e.Employee);
 
             if (contracts != null)
             {

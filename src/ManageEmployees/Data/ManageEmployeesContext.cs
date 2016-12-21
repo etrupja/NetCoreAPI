@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using ManageEmployees.Models.Entities;
 using ManageEmployees.Models.Enums;
 using Microsoft.EntityFrameworkCore;

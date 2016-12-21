@@ -1,14 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Net;
-using System.Net.Http;
-using System.Threading.Tasks;
 using ManageEmployees.Data.Abstract;
-using ManageEmployees.Data.Repositories;
 using ManageEmployees.Models.Entities;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 
 namespace ManageEmployees.Controllers
 {
