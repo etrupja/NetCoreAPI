@@ -1,4 +1,6 @@
 ﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ManageEmployees.Models.Entities
 {
@@ -9,8 +11,14 @@ namespace ManageEmployees.Models.Entities
             Employees = new List<Employee>();
         }
 
+        [Key,Column(Order = 0)]
         public int Id { get; set; }
+
+        [Required(ErrorMessage = "Department name is required.")]
+        [StringLength(120)]
         public string Name { get; set; }
+
+
         public ICollection<Employee> Employees { get; set; }
     }
 }
