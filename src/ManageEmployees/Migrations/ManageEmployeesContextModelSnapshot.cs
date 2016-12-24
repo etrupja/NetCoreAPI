@@ -28,11 +28,11 @@ namespace ManageEmployees.Migrations
 
                     b.Property<DateTime>("EndDate")
                         .ValueGeneratedOnAdd()
-                        .HasDefaultValue(new DateTime(2016, 12, 18, 14, 27, 55, 154, DateTimeKind.Local));
+                        .HasDefaultValue(new DateTime(2016, 12, 24, 19, 43, 55, 553, DateTimeKind.Local));
 
                     b.Property<DateTime>("StartDate")
                         .ValueGeneratedOnAdd()
-                        .HasDefaultValue(new DateTime(2016, 12, 18, 14, 27, 55, 154, DateTimeKind.Local));
+                        .HasDefaultValue(new DateTime(2016, 12, 24, 19, 43, 55, 553, DateTimeKind.Local));
 
                     b.HasKey("Id");
 
@@ -64,7 +64,7 @@ namespace ManageEmployees.Migrations
 
                     b.Property<DateTime>("BirthDate")
                         .ValueGeneratedOnAdd()
-                        .HasDefaultValue(new DateTime(2016, 12, 18, 14, 27, 55, 121, DateTimeKind.Local));
+                        .HasDefaultValue(new DateTime(2016, 12, 24, 19, 43, 55, 522, DateTimeKind.Local));
 
                     b.Property<int>("DepartmentId");
 

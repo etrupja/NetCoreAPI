@@ -24,6 +24,10 @@
   },
 
   "tools": {
+    "Microsoft.EntityFrameworkCore.Tools": {
+      "imports": "portable-net451+win8",
+      "version": "1.0.0-preview1-final"
+    },
     "Microsoft.AspNetCore.Server.IISIntegration.Tools": "1.0.0-preview2-final"
   },
 

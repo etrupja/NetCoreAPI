@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace ManageEmployees.Migrations
 {
-    public partial class MyFirstMigration : Migration
+    public partial class Init : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -29,7 +29,7 @@ namespace ManageEmployees.Migrations
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     Age = table.Column<int>(nullable: false),
-                    BirthDate = table.Column<DateTime>(nullable: false, defaultValue: new DateTime(2016, 12, 18, 14, 27, 55, 121, DateTimeKind.Local)),
+                    BirthDate = table.Column<DateTime>(nullable: false, defaultValue: new DateTime(2016, 12, 24, 19, 43, 55, 522, DateTimeKind.Local)),
                     DepartmentId = table.Column<int>(nullable: false),
                     FirstName = table.Column<string>(nullable: true),
                     JobPosition = table.Column<int>(nullable: false, defaultValue: 2),
@@ -54,8 +54,8 @@ namespace ManageEmployees.Migrations
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     Amount = table.Column<int>(nullable: false),
                     EmployeeId = table.Column<int>(nullable: false),
-                    EndDate = table.Column<DateTime>(nullable: false, defaultValue: new DateTime(2016, 12, 18, 14, 27, 55, 154, DateTimeKind.Local)),
-                    StartDate = table.Column<DateTime>(nullable: false, defaultValue: new DateTime(2016, 12, 18, 14, 27, 55, 154, DateTimeKind.Local))
+                    EndDate = table.Column<DateTime>(nullable: false, defaultValue: new DateTime(2016, 12, 24, 19, 43, 55, 553, DateTimeKind.Local)),
+                    StartDate = table.Column<DateTime>(nullable: false, defaultValue: new DateTime(2016, 12, 24, 19, 43, 55, 553, DateTimeKind.Local))
                 },
                 constraints: table =>
                 {

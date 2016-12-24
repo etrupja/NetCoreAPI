@@ -50,6 +50,8 @@ namespace ManageEmployees
             loggerFactory.AddDebug();
 
             app.UseMvc();
+
+            ManageEmployeesDbInitializer.Initialize(app.ApplicationServices);
         }
     }
 }
