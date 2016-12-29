@@ -9,9 +9,10 @@ using ManageEmployees.Models.Enums;
 namespace ManageEmployees.Migrations
 {
     [DbContext(typeof(ManageEmployeesContext))]
-    partial class ManageEmployeesContextModelSnapshot : ModelSnapshot
+    [Migration("20161229155936_Initial")]
+    partial class Initial
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.1.0-rtm-22752")

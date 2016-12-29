@@ -15,6 +15,7 @@ namespace ManageEmployees.Data
 
         public ManageEmployeesContext(DbContextOptions options) : base(options)
         {
+
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

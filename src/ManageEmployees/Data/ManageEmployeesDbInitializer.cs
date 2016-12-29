@@ -81,6 +81,7 @@ namespace ManageEmployees.Data
             {
                 Contract ct1 = new Contract
                 {
+                    Name="Contract ct1",
                     Amount = 50000,
                     EmployeeId = 1,
                     StartDate = DateTime.Now,
@@ -89,6 +90,7 @@ namespace ManageEmployees.Data
 
                 Contract ct2 = new Contract
                 {
+                    Name = "Contract ct2",
                     Amount = 45000,
                     EmployeeId = 1,
                     StartDate = DateTime.Now.AddYears(-3),
@@ -96,6 +98,7 @@ namespace ManageEmployees.Data
                 };
                 Contract ct3 = new Contract
                 {
+                    Name = "Contract ct3",
                     Amount = 45000,
                     EmployeeId = 1,
                     StartDate = DateTime.Now.AddYears(-3),
@@ -103,6 +106,7 @@ namespace ManageEmployees.Data
                 };
                 Contract ct4 = new Contract
                 {
+                    Name = "Contract ct4",
                     Amount = 45000,
                     EmployeeId = 2,
                     StartDate = DateTime.Now.AddYears(-3),
@@ -110,6 +114,7 @@ namespace ManageEmployees.Data
                 };
                 Contract ct5 = new Contract
                 {
+                    Name = "Contract ct5",
                     Amount = 45000,
                     EmployeeId = 3,
                     StartDate = DateTime.Now.AddYears(-3),

@@ -11,6 +11,10 @@ namespace ManageEmployees.Models.Entities
 
         public int Id { get; set; }
 
+        [Required(ErrorMessage = "Contract name is required.")]
+        [StringLength(120)]
+        public string Name { get; set; }
+
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime StartDate { get; set; }
