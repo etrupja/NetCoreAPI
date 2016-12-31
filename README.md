@@ -21,7 +21,7 @@ To install .NET Core please follow the steps on the official web site https://ww
 
 		add-migration "initial"
 
-		database-update
+		update-database
 
 
 
