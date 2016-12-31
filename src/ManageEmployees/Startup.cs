@@ -43,6 +43,9 @@ namespace ManageEmployees
                     options.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
                     options.SerializerSettings.Formatting = Formatting.Indented;
                 });
+
+            services.AddCors(options => options.AddPolicy("AllowAll", p=> p.AllowAnyOrigin()));
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -52,6 +55,7 @@ namespace ManageEmployees
             loggerFactory.AddDebug();
 
             app.UseMvc();
+            app.UseCors("AllowAll");
 
             ManageEmployeesDbInitializer.Initialize(app.ApplicationServices);
         }

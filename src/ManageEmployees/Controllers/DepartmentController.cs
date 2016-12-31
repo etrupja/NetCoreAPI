@@ -3,10 +3,12 @@ using System.Linq;
 using ManageEmployees.Data.Abstract;
 using ManageEmployees.Models.Entities;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Cors;
 
 namespace ManageEmployees.Controllers
 {
     [Route("api/[controller]")]
+    [EnableCors("AllowAll")]
     public class DepartmentController : Controller
     {
         private readonly IDepartmentRepository _departmentRepository;

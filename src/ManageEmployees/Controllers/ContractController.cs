@@ -2,10 +2,12 @@
 using ManageEmployees.Data.Abstract;
 using ManageEmployees.Models.Entities;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Cors;
 
 namespace ManageEmployees.Controllers
 {
     [Route("api/[controller]")]
+    [EnableCors("AllowAll")]
     public class ContractController : Controller
     {
         private readonly IContractRepository _contractRepository;
