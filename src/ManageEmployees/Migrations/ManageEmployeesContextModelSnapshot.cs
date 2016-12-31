@@ -28,7 +28,7 @@ namespace ManageEmployees.Migrations
 
                     b.Property<DateTime>("EndDate")
                         .ValueGeneratedOnAdd()
-                        .HasDefaultValue(new DateTime(2016, 12, 29, 16, 59, 36, 441, DateTimeKind.Local));
+                        .HasDefaultValue(new DateTime(2016, 12, 31, 16, 42, 24, 117, DateTimeKind.Local));
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -36,7 +36,7 @@ namespace ManageEmployees.Migrations
 
                     b.Property<DateTime>("StartDate")
                         .ValueGeneratedOnAdd()
-                        .HasDefaultValue(new DateTime(2016, 12, 29, 16, 59, 36, 440, DateTimeKind.Local));
+                        .HasDefaultValue(new DateTime(2016, 12, 31, 16, 42, 24, 117, DateTimeKind.Local));
 
                     b.HasKey("Id");
 
@@ -49,6 +49,9 @@ namespace ManageEmployees.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Description")
+                        .IsRequired();
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -68,7 +71,7 @@ namespace ManageEmployees.Migrations
 
                     b.Property<DateTime>("BirthDate")
                         .ValueGeneratedOnAdd()
-                        .HasDefaultValue(new DateTime(2016, 12, 29, 16, 59, 36, 407, DateTimeKind.Local));
+                        .HasDefaultValue(new DateTime(2016, 12, 31, 16, 42, 24, 89, DateTimeKind.Local));
 
                     b.Property<int>("DepartmentId");
 

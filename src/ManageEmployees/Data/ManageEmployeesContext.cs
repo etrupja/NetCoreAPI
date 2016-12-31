@@ -38,6 +38,7 @@ namespace ManageEmployees.Data
 
             modelBuilder.Entity<Department>().ToTable("Department");
             modelBuilder.Entity<Department>().Property(s => s.Name).IsRequired().HasMaxLength(200);
+            modelBuilder.Entity<Department>().Property(s => s.Description).IsRequired();
             modelBuilder.Entity<Department>().HasMany(s => s.Employees);
 
             modelBuilder.Entity<Contract>().ToTable("Contract");

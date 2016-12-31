@@ -19,6 +19,10 @@ namespace ManageEmployees.Models.Entities
         public string Name { get; set; }
 
 
+        [Required(ErrorMessage = "Department description is required.")]
+        public string Description { get; set; }
+
+
         public ICollection<Employee> Employees { get; set; }
     }
 }

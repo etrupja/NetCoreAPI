@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace ManageEmployees.Migrations
 {
-    public partial class Initial : Migration
+    public partial class InitialCreation : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -15,6 +15,7 @@ namespace ManageEmployees.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    Description = table.Column<string>(nullable: false),
                     Name = table.Column<string>(maxLength: 200, nullable: false)
                 },
                 constraints: table =>
@@ -29,7 +30,7 @@ namespace ManageEmployees.Migrations
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     Age = table.Column<int>(nullable: false),
-                    BirthDate = table.Column<DateTime>(nullable: false, defaultValue: new DateTime(2016, 12, 29, 16, 59, 36, 407, DateTimeKind.Local)),
+                    BirthDate = table.Column<DateTime>(nullable: false, defaultValue: new DateTime(2016, 12, 31, 16, 42, 24, 89, DateTimeKind.Local)),
                     DepartmentId = table.Column<int>(nullable: false),
                     FirstName = table.Column<string>(maxLength: 120, nullable: false),
                     JobPosition = table.Column<int>(nullable: false, defaultValue: 2),
@@ -54,9 +55,9 @@ namespace ManageEmployees.Migrations
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     Amount = table.Column<int>(nullable: false),
                     EmployeeId = table.Column<int>(nullable: false),
-                    EndDate = table.Column<DateTime>(nullable: false, defaultValue: new DateTime(2016, 12, 29, 16, 59, 36, 441, DateTimeKind.Local)),
+                    EndDate = table.Column<DateTime>(nullable: false, defaultValue: new DateTime(2016, 12, 31, 16, 42, 24, 117, DateTimeKind.Local)),
                     Name = table.Column<string>(maxLength: 120, nullable: false),
-                    StartDate = table.Column<DateTime>(nullable: false, defaultValue: new DateTime(2016, 12, 29, 16, 59, 36, 440, DateTimeKind.Local))
+                    StartDate = table.Column<DateTime>(nullable: false, defaultValue: new DateTime(2016, 12, 31, 16, 42, 24, 117, DateTimeKind.Local))
                 },
                 constraints: table =>
                 {

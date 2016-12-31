@@ -21,9 +21,9 @@ namespace ManageEmployees.Data
         {
             if (!context.Departments.Any())
             {
-                Department dpt1 = new Department { Name = "Development" };
-                Department dpt2 = new Department { Name = "Marketing" };
-                Department dpt3 = new Department { Name = "Consulting" };
+                Department dpt1 = new Department { Name = "Development", Description= "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do tempor incididunt ut labore et dolore magna aliqua. This is supporting text." };
+                Department dpt2 = new Department { Name = "Marketing", Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do tempor incididunt ut labore et dolore magna aliqua. This is supporting text." };
+                Department dpt3 = new Department { Name = "Consulting", Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do tempor incididunt ut labore et dolore magna aliqua. This is supporting text." };
 
                 context.Departments.Add(dpt1); //id=1
                 context.Departments.Add(dpt2); //id=2
