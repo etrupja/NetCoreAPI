@@ -39,34 +39,34 @@ namespace ManageEmployees.Data
                     FirstName = "Ervis",
                     LastName = "Trupja",
                     Age = 24,
-                    BirthDate = DateTime.Now.AddYears(-24),
+                    BirthDate = DateTime.Now.Date.AddYears(-24),
                     DepartmentId = 1,
                     JobPosition = JobPosition.Junior
                 };
                 Employee emp2 = new Employee
                 {
-                    FirstName = "Ervis2",
-                    LastName = "Trupja2",
+                    FirstName = "Mitro",
+                    LastName = "MSurname",
                     Age = 23,
-                    BirthDate = DateTime.Now.AddYears(-23),
+                    BirthDate = DateTime.Now.Date.AddYears(-23),
                     DepartmentId = 1,
                     JobPosition = JobPosition.Senior
                 };
                 Employee emp3 = new Employee
                 {
-                    FirstName = "Ervis3",
-                    LastName = "Trupja3",
+                    FirstName = "Abraham",
+                    LastName = "ASurname",
                     Age = 20,
-                    BirthDate = DateTime.Now.AddYears(-20),
+                    BirthDate = DateTime.Now.Date.AddYears(-20),
                     DepartmentId = 2,
                     JobPosition = JobPosition.Trainee
                 };
                 Employee emp4 = new Employee
                 {
-                    FirstName = "Ervis",
-                    LastName = "Trupja",
+                    FirstName = "Abbey",
+                    LastName = "ASurname",
                     Age = 30,
-                    BirthDate = DateTime.Now.AddYears(-30),
+                    BirthDate = DateTime.Now.Date.AddYears(-30),
                     DepartmentId = 3,
                     JobPosition = JobPosition.Senior
                 };
@@ -84,8 +84,8 @@ namespace ManageEmployees.Data
                     Name="Contract ct1",
                     Amount = 50000,
                     EmployeeId = 1,
-                    StartDate = DateTime.Now,
-                    EndDate = DateTime.Now.AddYears(2)
+                    StartDate = DateTime.Now.Date,
+                    EndDate = DateTime.Now.Date.AddYears(2)
                 };
 
                 Contract ct2 = new Contract
@@ -93,32 +93,32 @@ namespace ManageEmployees.Data
                     Name = "Contract ct2",
                     Amount = 45000,
                     EmployeeId = 1,
-                    StartDate = DateTime.Now.AddYears(-3),
-                    EndDate = DateTime.Now
+                    StartDate = DateTime.Now.Date.AddYears(-3),
+                    EndDate = DateTime.Now.Date
                 };
                 Contract ct3 = new Contract
                 {
                     Name = "Contract ct3",
                     Amount = 45000,
                     EmployeeId = 1,
-                    StartDate = DateTime.Now.AddYears(-3),
-                    EndDate = DateTime.Now
+                    StartDate = DateTime.Now.Date.AddYears(-3),
+                    EndDate = DateTime.Now.Date
                 };
                 Contract ct4 = new Contract
                 {
                     Name = "Contract ct4",
                     Amount = 45000,
                     EmployeeId = 2,
-                    StartDate = DateTime.Now.AddYears(-3),
-                    EndDate = DateTime.Now
+                    StartDate = DateTime.Now.Date.AddYears(-3),
+                    EndDate = DateTime.Now.Date
                 };
                 Contract ct5 = new Contract
                 {
                     Name = "Contract ct5",
                     Amount = 45000,
                     EmployeeId = 3,
-                    StartDate = DateTime.Now.AddYears(-3),
-                    EndDate = DateTime.Now
+                    StartDate = DateTime.Now.Date.AddYears(-3),
+                    EndDate = DateTime.Now.Date
                 };
 
                 context.Contracts.Add(ct1);
