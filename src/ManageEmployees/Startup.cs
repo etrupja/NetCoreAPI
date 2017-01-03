@@ -36,6 +36,16 @@ namespace ManageEmployees
             services.AddScoped<IEmployeeRepository, EmployeeRepository>();
             services.AddScoped<IDepartmentRepository, DepartmentRepository>();
 
+            //Adding Cors Config
+            services.AddCors(options =>
+            {
+                options.AddPolicy("AllowAll",
+                    p => p.AllowAnyOrigin().
+                    AllowAnyMethod().
+                    AllowAnyHeader().
+                    AllowCredentials());
+             });
+
             // Add framework services.
             services.AddMvc()
                 .AddJsonOptions(options =>
@@ -44,10 +54,9 @@ namespace ManageEmployees
                     options.SerializerSettings.Formatting = Formatting.Indented;
                 });
 
-            services.AddCors(options => options.AddPolicy("AllowAll", p=> p.AllowAnyOrigin()));
 
         }
-
+        
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {

@@ -79,6 +79,7 @@ namespace ManageEmployees.Controllers
                 var _department = _departmentRepository.GetSingle(id);
                 if (_department == null) throw new ArgumentNullException(nameof(_department));
                 _department.Name = department.Name;
+                _department.Description = department.Description;
                 _departmentRepository.Commit();
             }
             catch (Exception ex)
