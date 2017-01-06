@@ -96,7 +96,7 @@ namespace ManageEmployees.Controllers
 
             var departmentEmployees = _employeeRepository.FindBy(a => a.DepartmentId == id);
 
-            if (departmentEmployees != null) return BadRequest("Department you want to delete has employees assigned.");
+            if (departmentEmployees.Count() > 0) return BadRequest("Department you want to delete has employees assigned.");
 
             _departmentRepository.Delete(department);
             _departmentRepository.Commit();
