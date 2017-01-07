@@ -1,11 +1,17 @@
-﻿namespace ManageEmployees.Models.Enums
+﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
+using System.Runtime.Serialization;
+
+namespace ManageEmployees.Models.Enums
 {
+
+    [JsonConverter(typeof(StringEnumConverter))]
     public enum JobPosition
     {
-        Trainee = 1,
-        Junior = 2,
-        Senior = 3,
-        Expert = 4,
-        ProjectManager = 5
+        Trainee,
+        Junior,
+        Senior,
+        Expert,
+        ProjectManager
     }
 }
