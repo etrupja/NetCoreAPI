@@ -12,6 +12,6 @@ namespace ManageEmployees.Models.Enums
         Junior,
         Senior,
         Expert,
-        ProjectManager
+        Manager
     }
 }
