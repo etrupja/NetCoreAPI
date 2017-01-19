@@ -36,8 +36,8 @@ namespace ManageEmployees.Data
             {
                 Employee emp1 = new Employee
                 {
-                    FirstName = "Ervis",
-                    LastName = "Trupja",
+                    FirstName = "Adam",
+                    LastName = "Abraham",
                     Age = 24,
                     BirthDate = DateTime.Now.Date.AddYears(-24),
                     DepartmentId = 1,
@@ -45,8 +45,8 @@ namespace ManageEmployees.Data
                 };
                 Employee emp2 = new Employee
                 {
-                    FirstName = "Mitro",
-                    LastName = "MSurname",
+                    FirstName = "Alexandra",
+                    LastName = "Allan",
                     Age = 23,
                     BirthDate = DateTime.Now.Date.AddYears(-23),
                     DepartmentId = 1,
@@ -54,8 +54,8 @@ namespace ManageEmployees.Data
                 };
                 Employee emp3 = new Employee
                 {
-                    FirstName = "Abraham",
-                    LastName = "ASurname",
+                    FirstName = "Bella",
+                    LastName = "Chapman",
                     Age = 20,
                     BirthDate = DateTime.Now.Date.AddYears(-20),
                     DepartmentId = 2,
@@ -63,8 +63,8 @@ namespace ManageEmployees.Data
                 };
                 Employee emp4 = new Employee
                 {
-                    FirstName = "Abbey",
-                    LastName = "ASurname",
+                    FirstName = "Frank",
+                    LastName = "Clark",
                     Age = 30,
                     BirthDate = DateTime.Now.Date.AddYears(-30),
                     DepartmentId = 3,
@@ -129,9 +129,6 @@ namespace ManageEmployees.Data
 
                 context.SaveChanges();
             }
-
-            
-
         }
     }
 }
