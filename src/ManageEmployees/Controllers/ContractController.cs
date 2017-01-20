@@ -72,7 +72,7 @@ namespace ManageEmployees.Controllers
                 var _contract = _contractRepository.GetSingle(id);
 
                 if (_contract == null) throw new ArgumentNullException(nameof(_contract));
-
+                _contract.Name = contract.Name;
                 _contract.Amount = contract.Amount;
                 _contract.EndDate = contract.EndDate;
                 _contract.StartDate = contract.StartDate;
