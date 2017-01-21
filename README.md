@@ -28,5 +28,8 @@ To install .NET Core please follow the steps on the official web site https://ww
 ### **3.	Build and Run**
 You could test the API using POSTMAN which can be downloaded from here: https://www.getpostman.com/
 
+### **4.	How to set up the project**
+- https://www.youtube.com/watch?v=AYgs0kLjTLE&t=11s
+
 
 
