@@ -13,11 +13,15 @@ namespace ManageEmployees.Controllers
     {
         private readonly IEmployeeRepository _employeeRepository;
         private readonly IContractRepository _contractRepository;
+        private readonly IDepartmentRepository _departmentRepository;
 
-        public EmployeeController(IEmployeeRepository employeeRepository, IContractRepository contractRepository)
+        public EmployeeController(IEmployeeRepository employeeRepository, 
+                                  IContractRepository contractRepository,
+                                  IDepartmentRepository departmentRepository)
         {
             this._employeeRepository = employeeRepository;
             this._contractRepository = contractRepository;
+            this._departmentRepository = departmentRepository;
         }
 
         [HttpGet]
@@ -84,9 +88,8 @@ namespace ManageEmployees.Controllers
                 _employee.BirthDate = employee.BirthDate;
                 _employee.JobPosition = employee.JobPosition;
                 
-                if (_employeeRepository.GetSingle(employee.DepartmentId) == null) throw new ArgumentNullException($"No departments exist with ID you have selected.");
+                if (_departmentRepository.GetSingle(employee.DepartmentId) == null) throw new ArgumentNullException($"No departments exist with ID you have selected.");
                 _employee.DepartmentId = employee.DepartmentId;
-
                 _employeeRepository.Commit();
             }
             catch (Exception ex)
