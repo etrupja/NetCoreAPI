@@ -29,7 +29,6 @@ namespace ManageEmployees.Data
 
             modelBuilder.Entity<Employee>().ToTable("Employee");
             modelBuilder.Entity<Employee>().Property(s => s.DepartmentId).IsRequired();
-            modelBuilder.Entity<Employee>().Property(s => s.Age).IsRequired();
             modelBuilder.Entity<Employee>().Property(s => s.BirthDate).HasDefaultValue(DateTime.Now);
             modelBuilder.Entity<Employee>().Property(s => s.FirstName);
             modelBuilder.Entity<Employee>().Property(s => s.LastName).IsRequired();

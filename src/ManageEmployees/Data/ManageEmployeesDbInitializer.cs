@@ -38,7 +38,6 @@ namespace ManageEmployees.Data
                 {
                     FirstName = "Adam",
                     LastName = "Abraham",
-                    Age = 24,
                     BirthDate = DateTime.Now.Date.AddYears(-24),
                     DepartmentId = 1,
                     JobPosition = JobPosition.Junior
@@ -47,7 +46,6 @@ namespace ManageEmployees.Data
                 {
                     FirstName = "Alexandra",
                     LastName = "Allan",
-                    Age = 23,
                     BirthDate = DateTime.Now.Date.AddYears(-23),
                     DepartmentId = 1,
                     JobPosition = JobPosition.Senior
@@ -56,7 +54,6 @@ namespace ManageEmployees.Data
                 {
                     FirstName = "Bella",
                     LastName = "Chapman",
-                    Age = 20,
                     BirthDate = DateTime.Now.Date.AddYears(-20),
                     DepartmentId = 2,
                     JobPosition = JobPosition.Trainee
@@ -65,7 +62,6 @@ namespace ManageEmployees.Data
                 {
                     FirstName = "Frank",
                     LastName = "Clark",
-                    Age = 30,
                     BirthDate = DateTime.Now.Date.AddYears(-30),
                     DepartmentId = 3,
                     JobPosition = JobPosition.Senior

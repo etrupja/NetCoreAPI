@@ -24,9 +24,6 @@ namespace ManageEmployees.Models.Entities
         [StringLength(120)]
         public string FirstName { get; set; }
 
-        [Required]
-        public int Age { get; set; }
-
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime BirthDate { get; set; }

@@ -84,7 +84,6 @@ namespace ManageEmployees.Controllers
 
                 _employee.FirstName = employee.FirstName;
                 _employee.LastName = employee.LastName;
-                _employee.Age = employee.Age;
                 _employee.BirthDate = employee.BirthDate;
                 _employee.JobPosition = employee.JobPosition;
                 
