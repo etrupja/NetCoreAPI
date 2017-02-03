@@ -31,6 +31,8 @@ namespace ManageEmployees.Models.Entities
         [Required]
         public JobPosition JobPosition { get; set; }
 
+        public RecordStatus RecordStatus { get; set; }
+
         [ForeignKey("Department")]
         public int DepartmentId { get; set; }
 

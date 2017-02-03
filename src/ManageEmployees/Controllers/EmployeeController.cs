@@ -4,6 +4,7 @@ using ManageEmployees.Data.Abstract;
 using ManageEmployees.Models.Entities;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Cors;
+using ManageEmployees.Models.Enums;
 
 namespace ManageEmployees.Controllers
 {
@@ -27,11 +28,13 @@ namespace ManageEmployees.Controllers
         [HttpGet]
         public IActionResult Get()
         {
-            var employees = _employeeRepository.AllIncluding(p=>p.Department,c=>c.Contracts);
+            var employees = _employeeRepository
+                .AllIncluding(p => p.Department, c => c.Contracts)
+                .Where(rs => rs.RecordStatus == RecordStatus.Active);
 
-            if (employees != null) return Ok(employees);
-            
-            return NotFound();
+            if (employees.Any())
+                return Ok(employees);
+            return NoContent();
         }
 
         [HttpGet("{id}")]
@@ -46,7 +49,7 @@ namespace ManageEmployees.Controllers
         [HttpGet("{id}/contracts")]
         public IActionResult GetEmployeeContracts(int id)
         {
-            var employeeContracts = _contractRepository.GetAll().Where(p => p.EmployeeId == id);
+            var employeeContracts = _contractRepository.GetAll().Where(p => p.EmployeeId == id).Where(rs => rs.RecordStatus == RecordStatus.Active);
 
             if (employeeContracts != null)
                 return Ok(employeeContracts);
@@ -80,14 +83,18 @@ namespace ManageEmployees.Controllers
             {
                 var _employee = _employeeRepository.GetSingle(id);
 
-                if (_employee == null) throw new ArgumentNullException(nameof(_employee));
+                if (_employee == null)
+                    throw new ArgumentNullException(nameof(_employee));
 
                 _employee.FirstName = employee.FirstName;
                 _employee.LastName = employee.LastName;
                 _employee.BirthDate = employee.BirthDate;
                 _employee.JobPosition = employee.JobPosition;
+                _employee.RecordStatus = employee.RecordStatus;
                 
-                if (_departmentRepository.GetSingle(employee.DepartmentId) == null) throw new ArgumentNullException($"No departments exist with ID you have selected.");
+                if (_departmentRepository.GetSingle(employee.DepartmentId) == null)
+                    throw new ArgumentNullException($"No departments exist with ID you have selected.");
+
                 _employee.DepartmentId = employee.DepartmentId;
                 _employeeRepository.Commit();
             }
@@ -108,9 +115,9 @@ namespace ManageEmployees.Controllers
             var employeeContracts = _contractRepository.FindBy(a => a.EmployeeId == id);
 
             foreach (var contract in employeeContracts)
-                _contractRepository.Delete(contract);
+                _contractRepository.SetStatusDeleted(contract);
 
-            _employeeRepository.Delete(employee);
+            _employeeRepository.SetStatusDeleted(employee);
             _employeeRepository.Commit();
 
             return new NoContentResult();

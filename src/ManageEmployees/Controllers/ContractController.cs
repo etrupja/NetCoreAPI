@@ -3,6 +3,8 @@ using ManageEmployees.Data.Abstract;
 using ManageEmployees.Models.Entities;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Cors;
+using ManageEmployees.Models.Enums;
+using System.Linq;
 
 namespace ManageEmployees.Controllers
 {
@@ -22,24 +24,18 @@ namespace ManageEmployees.Controllers
         [HttpGet]
         public IActionResult Get()
         {
-            var contracts = _contractRepository.AllIncluding(e=>e.Employee);
+            var contracts = _contractRepository.AllIncluding(e=>e.Employee).Where(rs => rs.RecordStatus == RecordStatus.Active);
 
-            if (contracts != null)
-            {
+            if (contracts.Any())
                 return Ok(contracts);
-            }
-            return NotFound();
+            return NoContent();
         }
 
         [HttpGet("{id}")]
         public IActionResult Get(int id)
         {
-            Contract contract = _contractRepository.GetSingle(p=>p.Id==id ,p=>p.Employee);
-
-            if (contract != null)
-            {
-                return Ok(contract);
-            }
+            Contract contract = _contractRepository.GetSingle(p=>p.Id==id, p=>p.Employee);
+            if (contract != null) return Ok(contract);
             return NotFound();
         }
 
@@ -76,6 +72,7 @@ namespace ManageEmployees.Controllers
                 _contract.Amount = contract.Amount;
                 _contract.EndDate = contract.EndDate;
                 _contract.StartDate = contract.StartDate;
+                _contract.RecordStatus = contract.RecordStatus;
 
                 if (_employeeRepository.GetSingle(contract.EmployeeId) == null) throw new ArgumentNullException($"Department you want to delete has employees assigned.");
                 _contract.EmployeeId = contract.EmployeeId;
@@ -91,13 +88,13 @@ namespace ManageEmployees.Controllers
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {
-            Contract contract = _contractRepository.GetSingle(id);
+            var contract = _contractRepository.GetSingle(id);
 
             if (contract == null) return new NotFoundResult();
            
-                _contractRepository.Delete(contract);
-                _contractRepository.Commit();
-                return new NoContentResult();
+            _contractRepository.SetStatusDeleted(contract);
+            _contractRepository.Commit();
+            return new NoContentResult();
             }
         }
     }

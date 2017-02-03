@@ -21,9 +21,9 @@ namespace ManageEmployees.Data
         {
             if (!context.Departments.Any())
             {
-                Department dpt1 = new Department { Name = "Development", Description= "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do tempor incididunt ut labore et dolore magna aliqua. This is supporting text." };
-                Department dpt2 = new Department { Name = "Marketing", Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do tempor incididunt ut labore et dolore magna aliqua. This is supporting text." };
-                Department dpt3 = new Department { Name = "Consulting", Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do tempor incididunt ut labore et dolore magna aliqua. This is supporting text." };
+                Department dpt1 = new Department { Name = "Development", Description= "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do tempor incididunt ut labore et dolore magna aliqua. This is supporting text.", RecordStatus = RecordStatus.Active };
+                Department dpt2 = new Department { Name = "Marketing", Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do tempor incididunt ut labore et dolore magna aliqua. This is supporting text.", RecordStatus = RecordStatus.Active };
+                Department dpt3 = new Department { Name = "Consulting", Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do tempor incididunt ut labore et dolore magna aliqua. This is supporting text.",RecordStatus = RecordStatus.Active };
 
                 context.Departments.Add(dpt1); //id=1
                 context.Departments.Add(dpt2); //id=2
@@ -40,7 +40,8 @@ namespace ManageEmployees.Data
                     LastName = "Abraham",
                     BirthDate = DateTime.Now.Date.AddYears(-24),
                     DepartmentId = 1,
-                    JobPosition = JobPosition.Junior
+                    JobPosition = JobPosition.Junior,
+                    RecordStatus = RecordStatus.Active 
                 };
                 Employee emp2 = new Employee
                 {
@@ -48,7 +49,8 @@ namespace ManageEmployees.Data
                     LastName = "Allan",
                     BirthDate = DateTime.Now.Date.AddYears(-23),
                     DepartmentId = 1,
-                    JobPosition = JobPosition.Senior
+                    JobPosition = JobPosition.Senior,
+                    RecordStatus = RecordStatus.Active
                 };
                 Employee emp3 = new Employee
                 {
@@ -56,7 +58,8 @@ namespace ManageEmployees.Data
                     LastName = "Chapman",
                     BirthDate = DateTime.Now.Date.AddYears(-20),
                     DepartmentId = 2,
-                    JobPosition = JobPosition.Trainee
+                    JobPosition = JobPosition.Trainee,
+                    RecordStatus = RecordStatus.Active
                 };
                 Employee emp4 = new Employee
                 {
@@ -64,7 +67,8 @@ namespace ManageEmployees.Data
                     LastName = "Clark",
                     BirthDate = DateTime.Now.Date.AddYears(-30),
                     DepartmentId = 3,
-                    JobPosition = JobPosition.Senior
+                    JobPosition = JobPosition.Senior,
+                    RecordStatus = RecordStatus.Active
                 };
                 context.Employees.Add(emp1);
                 context.Employees.Add(emp2);
@@ -81,7 +85,8 @@ namespace ManageEmployees.Data
                     Amount = 50000,
                     EmployeeId = 1,
                     StartDate = DateTime.Now.Date,
-                    EndDate = DateTime.Now.Date.AddYears(2)
+                    EndDate = DateTime.Now.Date.AddYears(2),
+                    RecordStatus = RecordStatus.Active
                 };
 
                 Contract ct2 = new Contract
@@ -90,7 +95,8 @@ namespace ManageEmployees.Data
                     Amount = 45000,
                     EmployeeId = 1,
                     StartDate = DateTime.Now.Date.AddYears(-3),
-                    EndDate = DateTime.Now.Date
+                    EndDate = DateTime.Now.Date,
+                    RecordStatus = RecordStatus.Active
                 };
                 Contract ct3 = new Contract
                 {
@@ -98,7 +104,8 @@ namespace ManageEmployees.Data
                     Amount = 45000,
                     EmployeeId = 1,
                     StartDate = DateTime.Now.Date.AddYears(-3),
-                    EndDate = DateTime.Now.Date
+                    EndDate = DateTime.Now.Date,
+                    RecordStatus = RecordStatus.Active
                 };
                 Contract ct4 = new Contract
                 {
@@ -106,7 +113,8 @@ namespace ManageEmployees.Data
                     Amount = 45000,
                     EmployeeId = 2,
                     StartDate = DateTime.Now.Date.AddYears(-3),
-                    EndDate = DateTime.Now.Date
+                    EndDate = DateTime.Now.Date,
+                    RecordStatus = RecordStatus.Active
                 };
                 Contract ct5 = new Contract
                 {
@@ -114,7 +122,8 @@ namespace ManageEmployees.Data
                     Amount = 45000,
                     EmployeeId = 3,
                     StartDate = DateTime.Now.Date.AddYears(-3),
-                    EndDate = DateTime.Now.Date
+                    EndDate = DateTime.Now.Date,
+                    RecordStatus = RecordStatus.Active
                 };
 
                 context.Contracts.Add(ct1);

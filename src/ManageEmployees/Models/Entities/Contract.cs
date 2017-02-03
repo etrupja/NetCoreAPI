@@ -1,6 +1,7 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using ManageEmployees.Models.Enums;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ManageEmployees.Models.Entities
@@ -32,5 +33,8 @@ namespace ManageEmployees.Models.Entities
 
 
         public Employee Employee { get; set; }
+
+        public RecordStatus RecordStatus { get; set; }
+
     }
 }

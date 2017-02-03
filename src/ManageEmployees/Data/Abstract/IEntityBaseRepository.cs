@@ -17,6 +17,10 @@ namespace ManageEmployees.Data.Abstract
         void Add(T entity);
         void Update(T entity);
         void Delete(T entity);
+        void SetStatusDeleted(T entity);
+        void SetStatusActive(T entity);
+        void SetStatusArchived(T entity);
+        void SetStatusPending(T entity);
         void DeleteWhere(Expression<Func<T, bool>> predicate);
         void Commit();
     }

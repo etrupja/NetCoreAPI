@@ -5,6 +5,7 @@ using ManageEmployees.Data.Abstract;
 using ManageEmployees.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
+using ManageEmployees.Models.Enums;
 
 namespace ManageEmployees.Data.Base
 {
@@ -72,6 +73,23 @@ namespace ManageEmployees.Data.Base
         {
             EntityEntry dbEntityEntry = _context.Entry<T>(entity);
             dbEntityEntry.State = EntityState.Deleted;
+        }
+
+        public virtual void SetStatusDeleted(T entity)
+        {
+            entity.RecordStatus = RecordStatus.Deleted;
+        }
+        public virtual void SetStatusActive(T entity)
+        {
+            entity.RecordStatus = RecordStatus.Active;
+        }
+        public virtual void SetStatusArchived(T entity)
+        {
+            entity.RecordStatus = RecordStatus.Archived;
+        }
+        public virtual void SetStatusPending(T entity)
+        {
+            entity.RecordStatus = RecordStatus.Pending;
         }
 
         public virtual void DeleteWhere(Expression<Func<T, bool>> predicate)

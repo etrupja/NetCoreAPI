@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using ManageEmployees.Models.Enums;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -21,7 +22,7 @@ namespace ManageEmployees.Models.Entities
 
         [Required(ErrorMessage = "Department description is required.")]
         public string Description { get; set; }
-
+        public RecordStatus RecordStatus { get; set; }
 
         public ICollection<Employee> Employees { get; set; }
     }
