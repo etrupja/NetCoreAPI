@@ -19,9 +19,9 @@ To install .NET Core please follow the steps on the official web site https://ww
 
 -Run the following commands (they will create the database schema on your database environment):
 
-		add-migration "initial"
+		dotnet ef migrations add MyMigration
 
-		update-database
+		dotnet ef database update
 
 
 
