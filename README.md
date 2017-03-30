@@ -11,7 +11,7 @@
 To install .NET Core please follow the steps on the official web site https://www.microsoft.com/net/core#windowsvs2015
 
 ### **2.	Opening project**
--Open the solution in VS 2015 
+-Open the solution in VS 2017 
 
 -Open Package Manager Console on the project by going to: Tools > Nuget Package Manager > Package Manager Console
 
