@@ -40,18 +40,26 @@ namespace ManageEmployees.Controllers
         }
 
         [HttpPost]
-        public IActionResult Post([FromBody] Contract contract)
+        public IActionResult Post([FromBody] dynamic contract)
         {
             try
             {
-                var _contract = contract;
+                var _contract = new Contract()
+                {
+                    Name = contract.Name,
+                    StartDate = contract.startDate,
+                    EndDate = contract.endDate,
+                    Amount = contract.amount,
+                    EmployeeId = contract.employeeId
+                };
+
                 if (_contract == null) throw new ArgumentNullException(nameof(_contract));
-                if(_employeeRepository.GetSingle(contract.EmployeeId) == null) throw new ArgumentNullException($"Department you want to delete has employees assigned.");
+                if(_employeeRepository.GetSingle(_contract.EmployeeId) == null) throw new ArgumentNullException($"Department you want to delete has employees assigned.");
 
                 _contractRepository.Add(_contract);
                 _contractRepository.Commit();
 
-                return Created($"/api/contract/{contract.Id}", _contract);
+                return Created($"/api/contract/", _contract);
             }
             catch (Exception ex)
             {
