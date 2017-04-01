@@ -58,17 +58,25 @@ namespace ManageEmployees.Controllers
         }
         
         [HttpPost]
-        public IActionResult Post([FromBody] Employee employee)
+        public IActionResult Post([FromBody]  dynamic employee)
         {
             try
             {
-                var _employee = employee;
+                var _employee = new Employee()
+                {
+                    FirstName = employee.firstName,
+                    LastName = employee.lastName,
+                    BirthDate = employee.birthDate,
+                    JobPosition = (JobPosition)employee.jobPosition,
+                    DepartmentId = employee.departmentId
+                };
+
                 if (_employee == null) throw new ArgumentNullException(nameof(_employee));
                
                 _employeeRepository.Add(_employee);
                 _employeeRepository.Commit();
 
-                return Created($"/api/employee/{employee.Id}", _employee);
+                return Created($"/api/employee/", _employee);
             }
             catch (Exception ex)
             {
