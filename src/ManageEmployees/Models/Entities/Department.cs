@@ -1,4 +1,5 @@
 ﻿using ManageEmployees.Models.Enums;
+using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -17,10 +18,12 @@ namespace ManageEmployees.Models.Entities
 
         [Required(ErrorMessage = "Department name is required.")]
         [StringLength(120)]
+        [JsonProperty("name")]
         public string Name { get; set; }
 
 
         [Required(ErrorMessage = "Department description is required.")]
+        [JsonProperty("description")]
         public string Description { get; set; }
         public RecordStatus RecordStatus { get; set; }
 
